@@ -8,11 +8,11 @@ function Footer() {
     <div className='footer-container'>
       <section className='footer-subscription'>
         <p className='footer-subscription-heading'>
-          Join the Adventure newsletter to receive our best vacation deals
+          Take an adventure and Explore the easier way of managing your office assets!
         </p>
-        <p className='footer-subscription-text'>
+        {/* <p className='footer-subscription-text'>
           You can unsubscribe at any time.
-        </p>
+        </p> */}
         <div className='input-areas'>
           <form>
             <input
@@ -21,7 +21,7 @@ function Footer() {
               type='email'
               placeholder='Your Email'
             />
-            <Button buttonStyle='btn--outline'>Subscribe</Button>
+            <Button buttonStyle='btn--outline'>Sign-Up</Button>
           </form>
           <form>
             <input
@@ -48,17 +48,17 @@ function Footer() {
             <h2>Contact Us</h2>
             <Link to='/'>Contact</Link>
             <Link to='/'>Support</Link>
-            <Link to='/'>Destinations</Link>
-            <Link to='/'>Sponsorships</Link>
+            <Link to='/'>Customer Care</Link>
+            <Link to='/'>WernDesk</Link>
           </div>
         </div>
         <div className='footer-link-wrapper'>
           <div class='footer-link-items'>
             <h2>Videos</h2>
-            <Link to='/'>Submit Video</Link>
-            <Link to='/'>Ambassadors</Link>
-            <Link to='/'>Agency</Link>
-            <Link to='/'>Influencer</Link>
+            <Link to='/'>Request Demo</Link>
+            <Link to='/'>Watch tutorial</Link>
+            <Link to='/'>Check features</Link>
+            <Link to='/'>Referrals</Link>
           </div>
           <div class='footer-link-items'>
             <h2>Social Media</h2>

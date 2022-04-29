@@ -49,7 +49,7 @@
     outline: none;
     border: none;
     font-size: 18px; /*font size of what is typed and thus the SIZE OF THE BOX*/
-    margin-bottom: 16px; /*Space between the input box and words under it*/
+    margin-bottom: 12px; /*Space between the input box and words under it*/
     border: 1px solid rgb(0, 0, 6); /*border around the input boxes*/
     /* box-shadow: 20px; */
 
@@ -82,7 +82,7 @@
   }
   
   .footer-link-items h2 {
-    margin-bottom: 16px; /*Margin between the header and paragraphs*/
+    margin-bottom: 6px; /*Margin between the header and paragraphs*/
   }
   
   .footer-link-items > h2 {
@@ -94,7 +94,7 @@
     color: rgb(252, 250, 250); /*color of paragraph*/
     font-weight: bold;
     text-decoration: none;
-    margin-bottom: 0.5rem; /*Space between the paragrapagh sentences*/
+    margin-bottom: 0.1rem; /*Space between the paragrapagh sentences*/
   }
   
   .footer-link-items a:hover {
@@ -127,7 +127,7 @@
     align-items: center; /*To have the items at the center of the div*/
     width: 90%; /*Determibnes how much width the contents should sit on inside the div*/
     max-width: 1000px; /*The area that the contents should cover*/
-    margin: 40px auto 0 auto;
+    margin: 4px auto 0 auto;
   }
   
   .social-icons {
