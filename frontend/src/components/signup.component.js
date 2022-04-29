@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+// import * as React from 'react'
 export default class SignUp extends Component {
   render() {
     return (
@@ -32,6 +33,27 @@ export default class SignUp extends Component {
             placeholder="Enter password"
           />
         </div>
+        <div className="mb-3">
+          <div className="custom-control custom-checkbox">
+            <input
+              type="checkbox"
+              className="custom-control-input"
+              id="customCheck1"
+            />
+            <label className="custom-control-label" htmlFor="customCheck1">
+              Manager
+            </label>
+
+            <input
+              type="checkbox"
+              className="custom-control-input"
+              id="customCheck2"
+            />
+            <label className="custom-control-label" htmlFor="customCheck2">
+              Employee
+            </label>
+          </div>
+        </div>
         <div className="d-grid">
           <button type="submit" className="btn btn-primary">
             Sign Up
@@ -41,6 +63,6 @@ export default class SignUp extends Component {
           Already registered <a href="/sign-in">sign in?</a>
         </p>
       </form>
-    )
+    );
   }
 }
