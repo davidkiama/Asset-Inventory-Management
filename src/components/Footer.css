@@ -1,0 +1,182 @@
+.footer-container {
+    background: linear-gradient(90deg, rgb(133, 211, 211) 0%, rgb(1, 15, 12) 100%);
+    /* background: url('/images/img-home.jpg') center center/cover no-repeat; */
+      /* background: rgba(76, 175, 80, 0.1); */
+    padding: 1rem 0 1rem 0;
+    display: flex;
+    flex-direction: column; /*to place the items in foorter in a column at the centre */
+    justify-content: center;
+    align-items: center; /*to place the items in foooter at the centre */
+
+/* Box shadow as you enter the footer div */
+    box-shadow: 0.5px 16px 30px 30px rgba(73, 35, 35, 0.17); /*box-shadow: */
+    -webkit-filter: drop-shadow(10 16px 20px rgba(7, 7, 7, 0.017));
+    filter: drop-shadow(10 20px 22px rgba(114, 76, 76, 0.017));
+    
+  }
+  
+  .footer-subscription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+    margin-bottom: 24px;
+    padding: 24px;
+    color: #fff;
+  }
+  
+  .footer-subscription > p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+      'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .footer-subscription-heading {
+    margin-bottom: 24px;
+    font-size: 24px;
+  }
+  
+  .footer-subscription-text {
+    margin-bottom: 24px;
+    font-size: 20px;
+  }
+  
+  .footer-input {
+    padding: 4px 20px; /*To the width and length respectivelt of the email input box*/
+    border-radius: 12px; /*border radius for the email input box*/
+    margin-right: 10px; /*To set the space between the input box and button*/
+    outline: none;
+    border: none;
+    font-size: 18px; /*font size of what is typed and thus the SIZE OF THE BOX*/
+    margin-bottom: 16px; /*Space between the input box and words under it*/
+    border: 1px solid rgb(0, 0, 6); /*border around the input boxes*/
+    /* box-shadow: 20px; */
+
+/* Box shadow for the input field */
+    box-shadow: 0.5px 16px 30px 30px rgba(73, 35, 35, 0.17); /*box-shadow: */
+    -webkit-filter: drop-shadow(0 6px 20px rgba(131, 123, 123, 0.017));
+    filter: drop-shadow(0 0px 2px rgba(77, 54, 54, 0.017));
+
+  }
+  
+  .footer-links {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-link-wrapper {
+    display: flex;
+  }
+  
+  .footer-link-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 16px;
+    text-align: left;
+    width: 160px;
+    box-sizing: border-box;
+  }
+  
+  .footer-link-items h2 {
+    margin-bottom: 16px; /*Margin between the header and paragraphs*/
+  }
+  
+  .footer-link-items > h2 {
+    color: rgb(1, 22, 27); /*Color of the header*/
+    font-weight: bold;
+  }
+  
+  .footer-link-items a {
+    color: rgb(252, 250, 250); /*color of paragraph*/
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 0.5rem; /*Space between the paragrapagh sentences*/
+  }
+  
+  .footer-link-items a:hover {
+    color: #011116; /*Color that displays when you hover on the statements*/
+    transition: 0.7s ease-out; /*How long it takes to change to new color when you hover*/
+  }
+  
+  .footer-email-form h2 {
+    margin-bottom: 2rem;
+  }
+  
+  .footer-input::placeholder {
+    color: #7f8586; /*Color of placeholder*/
+  }
+  
+  /* Social Icons */
+  .social-icon-link {
+    color: rgb(1, 11, 14); /*Color of social icons*/
+    font-size: 24px; /*Size of social icons*/
+  }
+  
+  .social-media {
+    max-width: 1000px; /*Width between each other*/
+    width: 100%;/*Width between each other*/
+  }
+  
+  .social-media-wrap {
+    display: flex;
+    justify-content: space-between; /*so that the icons have spaces between*/
+    align-items: center; /*To have the items at the center of the div*/
+    width: 90%; /*Determibnes how much width the contents should sit on inside the div*/
+    max-width: 1000px; /*The area that the contents should cover*/
+    margin: 40px auto 0 auto;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: space-between; /*so that the icons have spaces between*/
+    align-items: center;
+    width: 200px; /*Width space between the social icons*/
+  }
+  
+  .social-logo {
+    color: rgb(1, 44, 41); /*color of icon*/
+    font-weight: bold; /*wight of icon*/
+    justify-self: start;
+    margin-left: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem; /*Size of the icons at the bottom*/
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px; /*width from the bottom*/
+  }
+  
+  .website-rights {
+    color: rgb(0, 22, 24); 
+    font-weight: bold; /*wight of icon*/
+    margin-bottom: 16px;
+  }
+  
+  @media screen and (max-width: 820px) {
+    .footer-links {
+      padding-top: 2rem;
+    }
+  
+    .footer-input {
+      width: 100%;
+    }
+  
+    .btn {
+      width: 100%;
+    }
+  
+    .footer-link-wrapper {
+      flex-direction: column;
+    }
+  
+    .social-media-wrap {
+      flex-direction: column;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+  }
