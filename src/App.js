@@ -10,6 +10,7 @@ import EmployeeDashboard from "./components/pages/EmployeeDashboard";
 
 import SignUp from "./components/pages/SignUp";
 import "./App.css";
+import Register from "./components/Form/Register";
 
 function App() {
   return (
@@ -22,8 +23,9 @@ function App() {
           <Route path="/" element={<Home />} exact />
           <Route path="/manager" element={<Manager />} exact />
           <Route path="/employee" element={<Employee />} exact />
+          <Route path="/register" element={<Register />} exact />
           <Route path="/employee-dashboard" element={<EmployeeDashboard />} exact />
-          <Route path="/sign-up" element={<SignUp />} exact />
+          <Route path="/register" element={<SignUp />} exact />
         </Routes>
       </Router>
     </>

@@ -75,9 +75,16 @@ function Navbar() {
               </Link>
             </li>
 
+            <li className="nav-item">
+              <Link to="/register" className="nav-links" onClick={closeMobileMenu}>
+                {/* You have to define closeMobileMenu at the top for it to work. */}
+                REGISTER
+              </Link>
+            </li>
+
             {/* Request sign-up icon div....going to asign-up */}
             <li className="nav-item">
-              <Link to="/sign-up" className="nav-links-mobile" onClick={closeMobileMenu}>
+              <Link to="/register" className="nav-links-mobile" onClick={closeMobileMenu}>
                 {/* You have to define closeMobileMenu at the top for it to work. */}
                 Sign-Up
               </Link>
