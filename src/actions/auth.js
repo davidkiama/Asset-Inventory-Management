@@ -4,6 +4,8 @@ import * as api from "../api";
 export const register = (user) => async (dispatch) => {
   try {
     const { data } = await api.register(user);
+    // Saving the token in the browser
+    localStorage.setItem("token", data.token);
 
     dispatch({ type: "REGISTER", payload: data.token });
   } catch (error) {

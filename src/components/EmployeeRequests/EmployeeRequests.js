@@ -11,14 +11,17 @@ function EmployeeRequests() {
       EmployeeRequests
       <div>
         <table className="requests-table">
-          <tr>
-            <th>Asset Type</th>
-            <th>Request Type</th>
-            <th>Sender</th>
-            <th>Quantity</th>
-            <th>Urgency</th>
-            <th>Status</th>
-          </tr>
+          <thead>
+            <tr>
+              <th>Asset Type</th>
+              <th>Request Type</th>
+              <th>Sender</th>
+              <th>Quantity</th>
+              <th>Urgency</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+
           {employeeRequests.map((employeeRequest) => (
             <EmployeeRequest key={employeeRequest.id} employeeRequest={employeeRequest} />
           ))}
