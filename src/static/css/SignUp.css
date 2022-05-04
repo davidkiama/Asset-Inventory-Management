@@ -1,0 +1,70 @@
+
+.register-form-form-title {
+    padding: 1.5rem 0;
+}
+
+.register-form-form-title h1 {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.register-form-form-role {
+    padding-top: .5rem;
+}
+
+.register-form-form-role-title {
+    padding-left: .3rem;
+    font-size: .9rem;
+}
+
+.register-form-form-role-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: .3rem;
+    padding-left: .7rem;
+}
+
+.register-form-form-role-user,
+.register-form-form-role-mover {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.register-form-form-role-user p,
+.register-form-form-role-mover p {
+    padding-left: .2rem;
+    font-size: .7rem;
+    font-weight: 700;
+}
+
+.register-form-form-role-mover {
+    padding-left: 1rem;
+}
+
+.register-form-form-register {
+    padding-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .register-form {
+        display: -ms-grid;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        -ms-grid-rows: 400px;
+        grid-template-rows: 450px;
+    }
+    .register-form-login {
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 1;
+        grid-column: 2/3;
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        grid-row: 1/2;
+        height: 100%;
+        border-top-right-radius: .3rem;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: .3rem;
+    }
+}
