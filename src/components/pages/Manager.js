@@ -1,202 +1,106 @@
-import React, {  useState , Fragment} from "react";
+import React, { useState } from 'react';
+import Container from '@material-ui/core/Container';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import RemoveIcon from '@material-ui/icons/Remove';
+import AddIcon from '@material-ui/icons/Add';
+import Icon from '@material-ui/core/Icon';
+import { v4 as uuidv4 } from 'uuid';
 
-import {nanoid} from "nanoid";
-import './Manager.css';
-import ReadOnlyRow from "../ReadOnlyRow";
-import EditableRow from "../EditableRow";
+import { makeStyles } from '@material-ui/core/styles';
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+    },
+  },
+  button: {
+    margin: theme.spacing(1),
+  }
+}))
 
+function App() {
+  const classes = useStyles()
+  const [inputFields, setInputFields] = useState([
+    { id: uuidv4(), assetname: '', companyName: '',quantity:'' },
+  ]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("InputFields", inputFields);
+  };
 
-
-// export default function manager() {
-    
-
-
-
-    
-// }
-
-const App = () => {
-
-    const [Assets, setAssets] = useState();
-    const [addFormData, setAddFormData] = useState({
-
-        Asset:'',
-        Category:'',
-        quantity:'',
-    }
-
-    )
-
-    const [editFormData, setEditFormData] = useState({
-        Asset:'',
-        Category:'',
-        quantity:'',
+  const handleChangeInput = (id, event) => {
+    const newInputFields = inputFields.map(i => {
+      if(id === i.id) {
+        i[event.target.name] = event.target.value
+      }
+      return i;
     })
-
-    const [editAssetId, setEditAssetId] = useState(null);
-
-
-
-    const handleAddFormChange = (event) => {
-        event.preventDefault();
-
-        const fieldName = event.target.getAttribute('name');
-        const fieldValue = event.target.value;
-
-        const newFormData = {...addFormData};
-        newFormData[fieldName] = fieldValue;
-
-        setAddFormData(newFormData);
-
-    };
-
-    const handleEditFormChange = (event) => {
-        event.preventDefault();
     
-        const fieldName = event.target.getAttribute("name");
-        const fieldValue = event.target.value;
-    
-        const newFormData = { ...editFormData };
-        newFormData[fieldName] = fieldValue;
-    
-        setEditFormData(newFormData);
-      };
+    setInputFields(newInputFields);
+  }
 
-    const handleAddFormSubmit = (event) => {
-        event.preventDefault();
+  const handleAddFields = () => {
+    setInputFields([...inputFields, { id: uuidv4(),  firstName: '', lastName: '' }])
+  }
 
-        const newAsset = {
-            id:nanoid(),
-            Asset: addFormData.Asset,
-            Category: addFormData.Category,
-            quantity:addFormData.quantity
-        }
-        
+  const handleRemoveFields = id => {
+    const values  = [...inputFields];
+    values.splice(values.findIndex(value => value.id === id), 1);
+    setInputFields(values);
+  }
 
-        const newAssets = [...Assets, newAsset];
-        setAssets(newAssets);
-    };
-
-    const handleEditFormSubmit = (event) => {
-        event.preventDefault();
-
-        const editedAsset = {
-            id: editAssetId,
-            Asset: editFormData.Asset,
-            Category: editFormData.Category,
-            quantity: editFormData.quantity,
-            
-          };
-
-          const newAssets = [...Assets];
-          const index = Assets.findIndex((Asset) => Asset.id === editAssetId);
-
-    newAssets[index] = editedAsset;
-
-    setAssets(newAssets);
-    setEditAssetId(null);
-  };
-
-  const handleEditClick = (event, Asset) => {
-    event.preventDefault();
-    setEditAssetId(Asset.id);
-
-    const formValues = {
-      Asset: Asset.Asset,
-      Category: Asset.Category,
-      quantity: Asset.quantity,
-     
-    };
-
-    setEditFormData(formValues);
-  };
-
-  const handleCancelClick = () => {
-    setEditAssetId(null);
-  };
-
-  const handleDeleteClick = (AssetId) => {
-    const newAssets = [...Assets];
-
-    const index = Assets.findIndex((Assets) => Assets.id === AssetId);
-
-    newAssets.splice(index, 1);
-
-    setAssets(newAssets);
-  };
-
-
-    return <div  className="app-container">
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Asset Name</th>
-                    <th>Category</th>
-                    <th>Quantity </th>
-                </tr>
-            </thead>
-
-            <thead>
-                <tbody>
-                <Fragment>
-                {editAssetId === Assets.id ? (
-                  <EditableRow
-                    editFormData={editFormData}
-                    handleEditFormChange={handleEditFormChange}
-                    handleCancelClick={handleCancelClick}
-                  />
-                ) : (
-                  <ReadOnlyRow
-                    Asset={Assets}
-                    handleEditClick={handleEditClick}
-                    handleDeleteClick={handleDeleteClick}
-                  />
-                )}
-              </Fragment>
-                    <tr>
-                        <td>HP elite book</td>
-                        <td>Laptop</td>
-                        <td>12</td>
-                    </tr>
-                </tbody>
-            </thead>
-        </table>
-
-        <h2>Add a New Asset</h2>
-            <form onSubmit={handleAddFormSubmit}>
-                <input
-
-                type="text"
-                name="Asset"
-                required="required"
-                placeholder="Enter an asset name"
-                onChange={handleAddFormChange}
-                />
-
-                <input
-                type="text"
-                name="Category"
-                required="required"
-                placeholder="Enter a category"
-                onChange={handleAddFormChange}
-                />
-
-                <input
-                type="integer"
-                name="quantity"
-                required="required"
-                placeholder="Enter the quantity"
-                onChange={handleAddFormChange}
-                />
-
-                <button type="submit">Add Asset</button>
-            </form>
-        
-
-    </div>
+  return (
+    <Container>
+      <h1>Add New Asset</h1>
+      <form className={classes.root} onSubmit={handleSubmit}>
+        { inputFields.map(inputField => (
+          <div key={inputField.id}>
+            <TextField
+              name="assetname"
+              label="assetname"
+              variant="filled"
+              value={inputField.assetname}
+              onChange={event => handleChangeInput(inputField.id, event)}
+            />
+            <TextField
+              name="companyName"
+              label="companyName"
+              variant="filled"
+              value={inputField.companyName}
+              onChange={event => handleChangeInput(inputField.id, event)}
+            />
+            <TextField
+              name="quantity"
+              label="quantity"
+              variant="filled"
+              value={inputField.quantity}
+              onChange={event => handleChangeInput(inputField.id, event)}
+            />
+            <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
+              <RemoveIcon />
+            </IconButton>
+            <IconButton
+              onClick={handleAddFields}
+            >
+              <AddIcon />
+            </IconButton>
+          </div>
+        )) }
+        <Button
+          className={classes.button}
+          variant="contained" 
+          color="primary" 
+          type="submit" 
+          endIcon={<Icon>Submit</Icon>}
+          onClick={handleSubmit}
+        >Submit</Button>
+      </form>
+    </Container>
+  );
 }
 
-export default App
+export default App;
