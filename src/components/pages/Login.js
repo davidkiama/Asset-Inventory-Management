@@ -24,10 +24,11 @@ function Login() {
   };
   return (
     <form
-      style={{ width: "400px", margin: "20px auto" }}
-      onSubmit={handleSubmit}
+    // style={{ width: "400px", margin: "20px auto" }}
+    // onSubmit={handleSubmit}
     >
       <div className="hero-container">
+        <video src="/videos/video-3.mp4" autoPlay loop muted />
         <div className="App">
           <div className="auth-wrapper">
             <div className="auth-inner">
