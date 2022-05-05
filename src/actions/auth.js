@@ -4,6 +4,7 @@ import * as api from "../api";
 export const register = (user) => async (dispatch) => {
   try {
     const { data } = await api.register(user);
+    // console.log(data);
 
     dispatch({ type: "REGISTER", payload: data.token });
   } catch (error) {
@@ -18,7 +19,7 @@ export const login = (user) => async (dispatch) => {
     localStorage.setItem("token", data.token);
     localStorage.setItem("userRole", data.user_role);
 
-    dispatch({ type: "LOGIN", payload: data.token });
+    // dispatch({ type: "LOGIN", payload: data.token });
     window.location.reload();
   } catch (error) {
     console.log(error);

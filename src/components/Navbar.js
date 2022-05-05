@@ -52,13 +52,23 @@ function Navbar() {
             {/* To mean when you click, it toggles from fa-times to fa-bars */}
           </div>
 
-          {userInfo ? (
+          {/* {userInfo ? (
             <>
               <h2> {userInfo} </h2>
               <button onClick={dispatch(logout)}> Logout </button>
             </>
           ) : (
             <h2> Not Logged in </h2>
+          )} */}
+
+          {userInfo ? (
+            <>
+              <h1>User logged in</h1>
+
+              <button onClick={dispatch(logout)}> Logout </button>
+            </>
+          ) : (
+            <h1>User logged out</h1>
           )}
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>

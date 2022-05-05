@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+
 import { useDispatch } from "react-redux";
+
 import { useNavigate } from "react-router-dom";
 
 import { register } from "../../actions/auth";
@@ -18,14 +20,20 @@ const initialState = {
 
 function SignUp() {
   const [userData, setUserData] = useState(initialState);
+
   const dispatch = useDispatch();
+
   const clearInputs = () => setUserData(initialState);
+  
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    
+
     dispatch(register(userData));
+   
 
     clearInputs();
 
