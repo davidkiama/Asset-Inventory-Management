@@ -16,6 +16,7 @@ function App() {
     <>
       <Router>
         <Navbar />
+        
         <Routes>
            {/* <Route path='/' exact component = {Home} /> */}
                            {/* Cauncelled this coz the new version 6 uses elements instead */}

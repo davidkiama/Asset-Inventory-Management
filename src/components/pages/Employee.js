@@ -9,7 +9,6 @@
 
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Button } from '../Button';
 
 function Employee() {
@@ -32,7 +31,15 @@ function Employee() {
               className='footer-input'
               name='email'
               type='email'
-              placeholder='Your Email'
+              placeholder='Asset Type'
+            />
+          </form>
+          <form>
+            <input
+              className='footer-input'
+              name='email'
+              type='number'
+              placeholder='Quantity'
             />
           </form>
           <form>
@@ -40,48 +47,20 @@ function Employee() {
               className='footer-input'
               name='email'
               type='email'
-              placeholder='Your Email'
+              placeholder='Request Type'
             />
           </form>
           <form>
             <input
               className='footer-input'
               name='email'
-              type='email'
-              placeholder='Your Email'
+              type='number'
+              placeholder='Urgency'
             />
           </form>
+          
           <form>
-            <input
-              className='footer-input'
-              name='email'
-              type='email'
-              placeholder='Your Email'
-            />
-          </form>
-          <form>
-            <input
-              className='footer-input'
-              name='email'
-              type='email'
-              placeholder='Your Email'
-            />
-          </form>
-          <form>
-            <input
-              className='footer-input'
-              name='email'
-              type='email'
-              placeholder='Your Email'
-            />
-          </form>
-          <form>
-            <input
-              className='footer-input'
-              name='email'
-              type='email'
-              placeholder='Your Email'
-            />
+    
           </form>
           <Button buttonStyle='btn--outline'>Submit</Button>
 
