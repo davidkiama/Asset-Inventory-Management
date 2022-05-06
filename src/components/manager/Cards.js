@@ -13,19 +13,19 @@ function Cards() {
               src='images/img-1.jpg'
               text='We make it easy for your employees to order printers'
               label='Request Printer'
-              path='/employee'
+              path='/Assetrequest'
             />
             <CardItem
               src='images/img-2.jpg'
               text='We make it easy for your employees to order laptops and computers'
               label='Request Laptop'
-              path='/employee'
+              path='/Assetrequest'
             />
               <CardItem
               src='images/img-3.jpg'
               text='We make it easy for your employees to order stationery'
               label='Request Files'
-              path='/employee'
+              path='/Assetrequest'
             />
           </ul>
           {/* I paste the cards again inside ul tags so that the dont list themselves downwards */}
@@ -34,13 +34,13 @@ function Cards() {
               src='images/img-2.jpg'
               text='We make it easy for your employees to order office electronics'
               label='Request Laptop'
-              path='/employee'
+              path='/Assetrequest'
             />
             <CardItem
               src='images/img-5.jpg'
               text='We make it easy for your employees to order office furniture'
               label='Request Seat'
-              path='/employee'
+              path='/Assetrequest'
             />
               <CardItem
               src='images/img-8.jpg'

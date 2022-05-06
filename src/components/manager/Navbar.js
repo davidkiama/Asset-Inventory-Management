@@ -57,18 +57,18 @@ function Navbar() {
               
 {/* Profile icon div.....going to profile/SERVICES */}
               <li className='nav-item'>
-                <Link to='/manager' className='nav-links' onClick={closeMobileMenu}> 
+                <Link to='/Asset' className='nav-links' onClick={closeMobileMenu}> 
                                       {/* You have to define closeMobileMenu at the top for it to work. */}
-                  Manager
+                  Assets
                 </Link>
               </li>
 
 
 {/* Request Asset icon div....going to asset/PRODUCTS */}
 <li className='nav-item'>
-                <Link to='/employee' className='nav-links' onClick={closeMobileMenu}> 
+                <Link to='/Assetrequest' className='nav-links' onClick={closeMobileMenu}> 
                                       {/* You have to define closeMobileMenu at the top for it to work. */}
-                  Employee
+                  Assetrequest
                 </Link>
               </li>
               
@@ -77,13 +77,13 @@ function Navbar() {
 <li className='nav-item'>
                 <Link to='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}> 
                                       {/* You have to define closeMobileMenu at the top for it to work. */}
-                  Sign-Up
+                  Logout
                 </Link>
               </li>
 
             </ul>
 
-            {button && <Button buttonStyle='btn--outline'>Sign-Up</Button>}
+            {button && <Button buttonStyle='btn--outline'>Log-Out</Button>}
         </div>
     </nav>
     </div>

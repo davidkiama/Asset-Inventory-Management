@@ -7,7 +7,8 @@ import RemoveIcon from '@material-ui/icons/Remove';
 import AddIcon from '@material-ui/icons/Add';
 import Icon from '@material-ui/core/Icon';
 import { v4 as uuidv4 } from 'uuid';
-
+// import ReactTable from "react-table";
+// import "react-table/react-table.css";
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -52,6 +53,8 @@ function App() {
     values.splice(values.findIndex(value => value.id === id), 1);
     setInputFields(values);
   }
+ 
+
 
   return (
     <Container>
@@ -99,8 +102,12 @@ function App() {
           onClick={handleSubmit}
         >Submit</Button>
       </form>
+     
+
     </Container>
   );
+
+  
 }
 
 export default App;

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css'; /*Importing global css*/
+// import ''; /*Importing global css*/
 import { Button } from './Button';
 import './HeroSection.css';
 
