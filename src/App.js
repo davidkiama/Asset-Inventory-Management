@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/manager/pages/Home';
 import Asset from './components/manager/pages/Asset';
 import Assetrequest from './components/manager/pages/Assetrequest';
+import AssetList from './components/manager/pages/AssetList';
 import SignUp from './components/manager/pages/SignUp';
 import "./App.css";
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<Home/>} exact />
           <Route path="/Asset" element={<Asset/>} exact />
           <Route path="/Assetrequest" element={<Assetrequest/>} exact />
+          <Route path="/AssetList" element={<AssetList/>} exact />
           <Route path="/sign-up" element={<SignUp/>} exact />
         </Routes>
       </Router>

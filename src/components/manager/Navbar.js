@@ -55,7 +55,9 @@ function Navbar() {
                 </Link>
               </li>
               
+              
 {/* Profile icon div.....going to profile/SERVICES */}
+
               <li className='nav-item'>
                 <Link to='/Asset' className='nav-links' onClick={closeMobileMenu}> 
                                       {/* You have to define closeMobileMenu at the top for it to work. */}
@@ -63,14 +65,30 @@ function Navbar() {
                 </Link>
               </li>
 
-
-{/* Request Asset icon div....going to asset/PRODUCTS */}
-<li className='nav-item'>
+              <li className='nav-item'>
                 <Link to='/Assetrequest' className='nav-links' onClick={closeMobileMenu}> 
                                       {/* You have to define closeMobileMenu at the top for it to work. */}
                   Assetrequest
                 </Link>
               </li>
+
+
+             
+
+              <li className='nav-item'>
+                <Link to='/AssetList' className='nav-links' onClick={closeMobileMenu}> 
+                                      {/* You have to define closeMobileMenu at the top for it to work. */}
+                  AssetList
+                </Link>
+              </li>
+
+{/* Request Asset icon div....going to asset/PRODUCTS */}
+              
+
+
+              
+
+
               
 
 {/* Request sign-up icon div....going to asign-up */}
