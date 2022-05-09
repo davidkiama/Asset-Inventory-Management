@@ -24,16 +24,12 @@ function SignUp() {
   const dispatch = useDispatch();
 
   const clearInputs = () => setUserData(initialState);
-  
+
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    
-
     dispatch(register(userData));
-   
 
     clearInputs();
 
