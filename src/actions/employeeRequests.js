@@ -9,3 +9,12 @@ export const fetchRequests = () => async (dispatch) => {
     console.log(error);
   }
 };
+
+export const createRequest = (employeeRequest) => async (dispatch) => {
+  try {
+    const data = await api.createRequest(employeeRequest);
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+};

@@ -3,6 +3,9 @@ export default (employeeRequests = [], action) => {
     case "FETCH_REQUESTS":
       return action.payload;
 
+    case "CREATE_REQUEST":
+      return action.payload;
+
     default:
       return employeeRequests;
   }

@@ -1,114 +1,84 @@
-// import React from 'react';
-// import '../../App.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
-// export default function employee() {
-//     return <h1 className=''>Employee Request Dashboard....Jacob</h1>;
+import "./RequestForm.css";
 
-// }
+import { createRequest } from "../../actions/employeeRequests";
 
-
-
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '../Button';
-
+const initialState = { asset_type: "", request_type: "", quantity: "", urgency: "", status: "open" };
 function Employee() {
+  const [requestData, setRequestData] = useState(initialState);
+
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    dispatch(createRequest(requestData));
+    console.log(requestData);
+  };
+
   return (
     <>
-    <div className='hero-container'>
-      <video src="/videos/video-3.mp4" autoPlay loop muted />
-      
-          <h1> EMPLOYEE DASHBOARD! </h1>
-          <p> Enter the details below </p>
-          <div className='hero-btns'>
-            {/* <Button className='btns' buttonStyle='btn--outline' buttonSize='btn--large'>
-                EXPLORE!
-            </Button> */}
-            
+      <div className="hero-container">
+        {/* <video src="/videos/video-3.mp4" autoPlay loop muted /> */}
 
-            <div className='input-areas'>
-          <form>
-            <input
-              className='footer-input'
-              name='email'
-              type='email'
-              placeholder='Your Email'
-            />
-          </form>
-          <form>
-            <input
-              className='footer-input'
-              name='email'
-              type='email'
-              placeholder='Your Email'
-            />
-          </form>
-          <form>
-            <input
-              className='footer-input'
-              name='email'
-              type='email'
-              placeholder='Your Email'
-            />
-          </form>
-          <form>
-            <input
-              className='footer-input'
-              name='email'
-              type='email'
-              placeholder='Your Email'
-            />
-          </form>
-          <form>
-            <input
-              className='footer-input'
-              name='email'
-              type='email'
-              placeholder='Your Email'
-            />
-          </form>
-          <form>
-            <input
-              className='footer-input'
-              name='email'
-              type='email'
-              placeholder='Your Email'
-            />
-          </form>
-          <form>
-            <input
-              className='footer-input'
-              name='email'
-              type='email'
-              placeholder='Your Email'
-            />
-          </form>
-          <Button buttonStyle='btn--outline'>Submit</Button>
+        <div className="hero-btns">
+          <div className="input-areas">
+            <form className="form form--request" onSubmit={handleSubmit}>
+              <h4>Create request</h4>
 
-        </div>
+              <label>Asset Type</label>
+              <input
+                required
+                type="text"
+                name="asset_type"
+                onChange={(e) => setRequestData({ ...requestData, [e.target.name]: e.target.value })}
+              />
 
+              <label>Request Type</label>
+              <select
+                required
+                type="text"
+                name="request_type"
+                onChange={(e) => setRequestData({ ...requestData, [e.target.name]: e.target.value })}
+              >
+                <option value="">Type of request</option>
+                <option value="Repair">Repair</option>
+                <option value="Service">Service</option>
+                <option value="New">New</option>
+              </select>
 
+              <label>Quantity</label>
+              <input
+                required
+                type="number"
+                name="quantity"
+                onChange={(e) => setRequestData({ ...requestData, [e.target.name]: e.target.value })}
+              />
+
+              <label>Urgency</label>
+              <select
+                required
+                name="urgency"
+                onChange={(e) => setRequestData({ ...requestData, [e.target.name]: e.target.value })}
+              >
+                <option value="">Level of urgency</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+
+              <button type="submit">Submit</button>
+            </form>
           </div>
-    </div>
-  </>
+        </div>
+      </div>
+    </>
   );
 }
 
 export default Employee;
-
-
-// import { _renderMatches } from "react-router/lib/hooks";
-
-
-// import React from 'react';
-
-// const Employee = () => {
-//   return (
-//     <div className="formInput">
-//       <label>Username</label>
-//       <input/>
-//     </div>
-//   );
-// }
-
-// export default Employee

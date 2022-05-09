@@ -10,7 +10,7 @@ function Navbar() {
   const dispatch = useDispatch();
 
   // Get user type of logged in account
-  const userInfo = localStorage.getItem("userRole");
+  const userRole = localStorage.getItem("userRole");
 
   const [click, setClick] = useState(false); // Code to set click to false to allow toggling when icon is clicked
 
@@ -52,27 +52,7 @@ function Navbar() {
             {/* To mean when you click, it toggles from fa-times to fa-bars */}
           </div>
 
-          {/* {userInfo ? (
-            <>
-              <h2> {userInfo} </h2>
-              <button onClick={dispatch(logout)}> Logout </button>
-            </>
-          ) : (
-            <h2> Not Logged in </h2>
-          )} */}
-
-          {userInfo ? (
-            <>
-              <h1>User logged in</h1>
-
-              <button onClick={dispatch(logout)}> Logout </button>
-            </>
-          ) : (
-            <h1>User logged out</h1>
-          )}
-
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            {/* To make the menu be active but when you click it again, it disappears */}
             <li className="nav-item">
               <Link to="/" className="nav-links" onClick={closeMobileMenu}>
                 {/* You have to define closeMobileMenu at the top for it to work. */}
@@ -80,32 +60,38 @@ function Navbar() {
               </Link>
             </li>
 
-            {/* Profile icon div.....going to profile/SERVICES */}
-            <li className="nav-item">
-              <Link to="/manager" className="nav-links" onClick={closeMobileMenu}>
-                {/* You have to define closeMobileMenu at the top for it to work. */}
-                Manager
-              </Link>
-            </li>
+            {userRole === "Employee" && (
+              <>
+                <li className="nav-item">
+                  <Link to="/employee" className="nav-links" onClick={closeMobileMenu}>
+                    {/* You have to define closeMobileMenu at the top for it to work. */}
+                    Create new request
+                  </Link>
+                </li>
+              </>
+            )}
 
-            {/* Request Asset icon div....going to asset/PRODUCTS */}
-            <li className="nav-item">
-              <Link to="/employee" className="nav-links" onClick={closeMobileMenu}>
-                {/* You have to define closeMobileMenu at the top for it to work. */}
-                Employee
-              </Link>
-            </li>
+            {userRole === "Manager" && (
+              <li className="nav-item">
+                <Link to="/manager" className="nav-links" onClick={closeMobileMenu}>
+                  {/* You have to define closeMobileMenu at the top for it to work. */}
+                  Manager
+                </Link>
+              </li>
+            )}
 
-            {/* Request sign-up icon div....going to asign-up */}
-            <li className="nav-item">
-              <Link to="/sign-up" className="nav-links-mobile" onClick={closeMobileMenu}>
-                {/* You have to define closeMobileMenu at the top for it to work. */}
-                Sign-Up
-              </Link>
-            </li>
+            {userRole ? (
+              <button onClick={dispatch(logout)}> logout</button>
+            ) : (
+              <li className="nav-item">
+                <Link to="/sign-up" className="nav-links-mobile" onClick={closeMobileMenu}>
+                  {/* You have to define closeMobileMenu at the top for it to work. */}
+                  Sign-Up
+                </Link>
+                {button && <Button buttonStyle="btn--outline">Sign-Up</Button>}
+              </li>
+            )}
           </ul>
-
-          {button && <Button buttonStyle="btn--outline">Sign-Up</Button>}
         </div>
       </nav>
     </div>

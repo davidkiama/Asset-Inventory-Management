@@ -19,7 +19,7 @@ export const login = (user) => async (dispatch) => {
     localStorage.setItem("token", data.token);
     localStorage.setItem("userRole", data.user_role);
 
-    // dispatch({ type: "LOGIN", payload: data.token });
+    dispatch({ type: "LOGIN", payload: data.token });
     window.location.reload();
   } catch (error) {
     console.log(error);
