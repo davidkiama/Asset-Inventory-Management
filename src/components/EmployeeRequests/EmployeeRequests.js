@@ -12,12 +12,12 @@ function EmployeeRequests() {
         <table className="requests-table">
           <thead>
             <tr>
+              <th>Status</th>
               <th>Asset Type</th>
               <th>Request Type</th>
               <th>Sender</th>
               <th>Quantity</th>
               <th>Urgency</th>
-              <th>Status</th>
             </tr>
           </thead>
 

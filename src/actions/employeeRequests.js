@@ -12,8 +12,29 @@ export const fetchRequests = () => async (dispatch) => {
 
 export const createRequest = (employeeRequest) => async (dispatch) => {
   try {
-    const data = await api.createRequest(employeeRequest);
-    console.log(data);
+    const { data } = await api.createRequest(employeeRequest);
+
+    dispatch({ type: "CREATE_REQUEST", payload: data });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const approveRequest = (id) => async (dispatch) => {
+  try {
+    const { data } = await api.approveRequest(id);
+
+    dispatch({ type: "APPROVE_REQUEST", payload: data });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const rejectRequest = (id) => async (dispatch) => {
+  try {
+    const { data } = await api.rejectRequest(id);
+
+    dispatch({ type: "REJECT_REQUEST", payload: data });
   } catch (error) {
     console.log(error);
   }

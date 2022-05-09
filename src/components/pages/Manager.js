@@ -15,8 +15,8 @@ function Manager() {
 
   return (
     <>
-      <h1 className="manager_approval">Manager Approval Dashboard....Esther</h1>
-      <p> All requests </p>
+      <h1 className="manager_approval">All requests from this organization</h1>
+
       <div>
         <EmployeeRequests />
       </div>

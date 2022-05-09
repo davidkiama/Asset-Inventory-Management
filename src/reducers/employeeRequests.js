@@ -6,6 +6,12 @@ export default (employeeRequests = [], action) => {
     case "CREATE_REQUEST":
       return action.payload;
 
+    case "APPROVE_REQUEST":
+      return action.payload;
+
+    case "REJECT_REQUEST":
+      return action.payload;
+
     default:
       return employeeRequests;
   }
