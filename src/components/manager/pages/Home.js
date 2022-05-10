@@ -1,15 +1,18 @@
-import React from 'react'
+import React from "react";
 // import './App.css' /*Importing global css*/
-import HeroSection from '../HeroSection';  /**/
-import Cards from '../Cards';
+import HeroSection from "../HeroSection"; /**/
+import Cards from "../Cards";
 
-import Footer from '../Footer';
+import Footer from "../Footer";
 
 function Home() {
+  const userRole = localStorage.getItem("userRole");
   return (
     <>
       <HeroSection />
-      <Cards />
+
+      {userRole === "Employee" ? <Cards /> : <></>}
+
       <Footer />
     </>
   );
