@@ -7,7 +7,7 @@ export default (employeeRequests = [], action) => {
       return action.payload;
 
     case "APPROVE_REQUEST":
-      return action.payload;
+      return [...employeeRequests, action.payload];
 
     case "REJECT_REQUEST":
       return action.payload;

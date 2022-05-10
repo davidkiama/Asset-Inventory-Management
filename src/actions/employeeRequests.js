@@ -23,6 +23,7 @@ export const createRequest = (employeeRequest) => async (dispatch) => {
 export const approveRequest = (id) => async (dispatch) => {
   try {
     const { data } = await api.approveRequest(id);
+    window.location.reload();
 
     dispatch({ type: "APPROVE_REQUEST", payload: data });
   } catch (error) {
@@ -33,6 +34,7 @@ export const approveRequest = (id) => async (dispatch) => {
 export const rejectRequest = (id) => async (dispatch) => {
   try {
     const { data } = await api.rejectRequest(id);
+    window.location.reload();
 
     dispatch({ type: "REJECT_REQUEST", payload: data });
   } catch (error) {
