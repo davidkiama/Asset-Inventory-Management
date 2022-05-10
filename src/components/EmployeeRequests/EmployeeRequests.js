@@ -6,6 +6,7 @@ import EmployeeRequest from "./EmployeeRequest/EmployeeRequest";
 
 function EmployeeRequests() {
   const employeeRequests = useSelector((state) => state.employeeRequests);
+  const userRole = localStorage.getItem("userRole");
 
   return (
     <div>
@@ -20,7 +21,7 @@ function EmployeeRequests() {
               <th>Sender</th>
               <th>Quantity</th>
               <th>Urgency</th>
-              <th colspan="2">Review</th>
+              {userRole === "Manager" ? <th colspan="2">Review</th> : <th>Delete</th>}
             </tr>
           </thead>
 
