@@ -93,19 +93,41 @@ function Navbar() {
                     AssetList
                   </Link>
                 </li>
+
               </>
             )}
 
             {userRole ? (
-              <button onClick={dispatch(logout)}> logout</button>
+              <>
+                <li className="nav-item">
+                  <Link className="nav-links" onClick={dispatch(logout)}>
+                    Logout
+                  </Link>
+                </li>
+              </>
+              /*<button onClick={dispatch(logout)}> logout</button>*/
+              
             ) : (
-              <li className="nav-item">
-                <Link to="/sign-up" className="nav-links-mobile" onClick={closeMobileMenu}>
-                  {/* You have to define closeMobileMenu at the top for it to work. */}
-                  Sign-Up
-                </Link>
-                {button && <Button buttonStyle="btn--outline">Sign-Up</Button>}
-              </li>
+              <>
+                <li className="nav-item">
+                  <Link to="/sign-up" className="nav-links" onClick={closeMobileMenu}>
+                    {/* You have to define closeMobileMenu at the top for it to work. */}
+                    Sign-Up
+                  </Link>
+                  {/*{button && <Button buttonStyle="btn--outline">Sign-Up</Button>}*/}
+                </li>
+
+                <li>
+                  <Link to="/sign-in" className="nav-links" onClick={closeMobileMenu}>
+                    {/* You have to define closeMobileMenu at the top for it to work. */}
+                    Sign-In
+                  </Link>
+                </li>
+              </>
+              
+
+              
+            
             )}
           </ul>
         </div>
