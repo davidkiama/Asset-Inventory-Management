@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 
+// import 'src/App.css';
+
 import { useDispatch } from "react-redux";
 
 import { useNavigate } from "react-router-dom";
 
-import { register } from "../../actions/auth";
+import { register } from "../../../actions/auth";
 
 // import * as React from 'react'
-import "../../static/css/SignUp.css";
+// import "../../";
 
 const initialState = {
   username: "",
@@ -38,10 +40,7 @@ function SignUp() {
   };
 
   return (
-    <form
-    style={{ width: "400px", margin: "15px auto" }}
-    onSubmit={handleSubmit}
-    >
+    <form style={{ width: "400px", margin: "15px auto" }} onSubmit={handleSubmit}>
       <div className="hero-container">
         <video src="/videos/video-3.mp4" autoPlay loop muted />
         <div className="App">
@@ -117,10 +116,7 @@ function SignUp() {
                   Sign Up
                 </button>
               </div>
-              <p
-                className="forgot-password text-right"
-                style={{ margin: "20px auto" }}
-              >
+              <p className="forgot-password text-right" style={{ margin: "20px auto" }}>
                 Already registered <a href="/sign-in">sign in?</a>
               </p>
             </div>

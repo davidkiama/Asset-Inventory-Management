@@ -4,7 +4,7 @@ import { Button } from "./Button";
 import "./Navbar.css";
 import { useDispatch } from "react-redux";
 
-import { logout } from "../actions/auth";
+import { logout } from "../../actions/auth";
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -63,21 +63,37 @@ function Navbar() {
             {userRole === "Employee" && (
               <>
                 <li className="nav-item">
-                  <Link to="/employee" className="nav-links" onClick={closeMobileMenu}>
+                  <Link to="/employee/dashboard" className="nav-links" onClick={closeMobileMenu}>
                     {/* You have to define closeMobileMenu at the top for it to work. */}
-                    Create new request
+                    Dashboard
                   </Link>
                 </li>
               </>
             )}
 
             {userRole === "Manager" && (
-              <li className="nav-item">
-                <Link to="/manager" className="nav-links" onClick={closeMobileMenu}>
-                  {/* You have to define closeMobileMenu at the top for it to work. */}
-                  Manager
-                </Link>
-              </li>
+              <>
+                <li className="nav-item">
+                  <Link to="/manager" className="nav-links" onClick={closeMobileMenu}>
+                    {/* You have to define closeMobileMenu at the top for it to work. */}
+                    Manager
+                  </Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link to="/Asset" className="nav-links" onClick={closeMobileMenu}>
+                    {/* You have to define closeMobileMenu at the top for it to work. */}
+                    Assets
+                  </Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link to="/AssetList" className="nav-links" onClick={closeMobileMenu}>
+                    {/* You have to define closeMobileMenu at the top for it to work. */}
+                    AssetList
+                  </Link>
+                </li>
+              </>
             )}
 
             {userRole ? (
