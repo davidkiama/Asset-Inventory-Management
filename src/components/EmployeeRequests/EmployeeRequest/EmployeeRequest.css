@@ -1,19 +1,28 @@
 .requests-table {
   /* background-color: red; */
-  width: 70%;
-  margin: 0 auto;
+  /* width: 70%; */
+  /* margin: 0 auto; */
+
+  /* border: 1px solid #ccc; */
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+
 }
 
 th {
   font-size: 2rem;
-  border: 2px solid black;
+  /* font-size: 1.8rem; */
+  /* border: 1px solid #ccc; */
   text-align: center;
   background-color: #eee;
 }
 
 tr {
   cursor: pointer;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 
   transition: all 0.4s;
 }
@@ -21,12 +30,6 @@ tr {
 td,
 button {
   padding: 0.5rem;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
-.reject {
-  background-color: rgba(255, 0, 0, 0.7);
-}
-.approve {
-  background-color: hsla(160, 100%, 75%, 0.7);
-}

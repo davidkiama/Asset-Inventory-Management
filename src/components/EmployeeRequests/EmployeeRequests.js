@@ -2,6 +2,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { CircularProgress } from "@mui/material";
 
+import './Employee_Request.css';
+
+
 import EmployeeRequest from "./EmployeeRequest/EmployeeRequest";
 
 function EmployeeRequests() {
@@ -9,11 +12,11 @@ function EmployeeRequests() {
   const userRole = localStorage.getItem("userRole");
 
   return (
-    <div>
-      <div>
-        <table className="requests-table">
+    <>
+    <table className="requests-table" class='table'>
+        <caption id='caption'>Assets requests summary statement</caption>
           <thead>
-            <tr>
+            <tr className="table-row">
               <th>Index</th>
               <th>Status</th>
               <th>Asset Type</th>
@@ -24,7 +27,7 @@ function EmployeeRequests() {
               {userRole === "Manager" ? <th colspan="2">Review</th> : <th>Delete</th>}
             </tr>
           </thead>
-
+          
           {!employeeRequests.length ? (
             <CircularProgress />
           ) : (
@@ -35,8 +38,7 @@ function EmployeeRequests() {
             </>
           )}
         </table>
-      </div>
-    </div>
+    </>
   );
 }
 

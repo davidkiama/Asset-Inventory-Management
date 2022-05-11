@@ -24,12 +24,12 @@ function EmployeeRequest({ employeeRequest, index }) {
         {userRole === "Manager" ? (
           <>
             <td>
-              <button className="reject" onClick={() => dispatch(rejectRequest(id))}>
+              <button className="reject btn btn-danger" onClick={() => dispatch(rejectRequest(id))}>
                 Reject
               </button>
             </td>
             <td>
-              <button className="approve" onClick={() => dispatch(approveRequest(id))}>
+              <button className="approve btn btn-outline-success" onClick={() => dispatch(approveRequest(id))}>
                 Approve
               </button>
             </td>

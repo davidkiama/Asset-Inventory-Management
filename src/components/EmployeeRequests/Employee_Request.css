@@ -1,0 +1,13 @@
+*{
+    font-family: 'PT Sans', sans-serif;
+}
+
+.table-row > th{
+        /* font-size: 2rem; */
+        font-size: 1.8rem;
+        /* border: 1px solid #ccc; */
+        text-align: center;
+}
+#caption{
+    color: aliceblue;
+}

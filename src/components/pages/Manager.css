@@ -1,6 +1,12 @@
-.table{
-    border: 2px solid red;
+*{
+    font-family: 'PT Sans', sans-serif;
 }
-.fill{
-    border: 3px solid green;
+
+/* .footer{
+    margin-bottom: 0%;
+} */
+
+.manager-dashboard{
+    background: linear-gradient(90deg, rgb(133, 211, 211) 0%, rgb(1, 15, 12) 100%);
+    color: white;
 }
