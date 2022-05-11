@@ -28,11 +28,14 @@ export const login = (user) => async (dispatch) => {
 
 export const logout = () => async (dispatch) => {
   try {
+    localStorage.clear();
+    window.location.reload();
     await api.logout();
 
-    window.location.reload();
+    this.props.history.push("/");
 
-    localStorage.clear();
+    // this.context.router.replace("/");
+    // window.location.href("/");
   } catch (error) {
     console.log(error);
   }
