@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 import { Button } from "./Button";
 import "./Navbar.css";
-import { useDispatch } from "react-redux";
-
 import { logout } from "../../actions/auth";
 
 function Navbar() {
@@ -35,6 +36,14 @@ function Navbar() {
   useEffect(() => {
     showButton();
   }, []);
+
+  const navigate = useNavigate();
+  const logoutFunc = () => {
+    dispatch(logout());
+
+    navigate("/");
+    window.location.reload();
+  };
 
   return (
     <div>
@@ -81,13 +90,6 @@ function Navbar() {
                 </li>
 
                 <li className="nav-item">
-                  <Link to="/Asset" className="nav-links" onClick={closeMobileMenu}>
-                    {/* You have to define closeMobileMenu at the top for it to work. */}
-                    Assets
-                  </Link>
-                </li>
-
-                <li className="nav-item">
                   <Link to="/AssetList" className="nav-links" onClick={closeMobileMenu}>
                     {/* You have to define closeMobileMenu at the top for it to work. */}
                     AssetList
@@ -97,15 +99,27 @@ function Navbar() {
             )}
 
             {userRole ? (
-              <button onClick={dispatch(logout)}> logout</button>
+              <button style={{ height: "fit-content", margin: "auto" }} onClick={logoutFunc}>
+                {" "}
+                logout
+              </button>
             ) : (
-              <li className="nav-item">
-                <Link to="/sign-up" className="nav-links-mobile" onClick={closeMobileMenu}>
-                  {/* You have to define closeMobileMenu at the top for it to work. */}
-                  Sign-Up
-                </Link>
-                {button && <Button buttonStyle="btn--outline">Sign-Up</Button>}
-              </li>
+              <>
+                <li className="nav-item">
+                  <Link to="/sign-up" className="nav-links" onClick={closeMobileMenu}>
+                    {/* You have to define closeMobileMenu at the top for it to work. */}
+                    Sign-Up
+                  </Link>
+                  {/*{button && <Button buttonStyle="btn--outline">Sign-Up</Button>}*/}
+                </li>
+
+                <li>
+                  <Link to="/sign-in" className="nav-links" onClick={closeMobileMenu}>
+                    {/* You have to define closeMobileMenu at the top for it to work. */}
+                    Sign-In
+                  </Link>
+                </li>
+              </>
             )}
           </ul>
         </div>

@@ -3,6 +3,7 @@ import axios from "axios";
 const authUrl = "http://127.0.0.1:8000/auth";
 const requestsUrl = "http://127.0.0.1:8000/requests/";
 const managerReviewUrl = "http://127.0.0.1:8000/manager/requests/";
+const assetsUrl = "http://127.0.0.1:8000/manager/assets/";
 
 let token = localStorage.getItem("token");
 
@@ -20,3 +21,6 @@ export const createRequest = (employeeRequest) => axios.post(requestsUrl, employ
 
 export const approveRequest = (id) => axios.put(`${managerReviewUrl}${id}/approve/`);
 export const rejectRequest = (id) => axios.put(`${managerReviewUrl}${id}/reject/`);
+
+export const fetchAssets = () => axios.get(assetsUrl);
+export const createAsset = (asset) => axios.post(assetsUrl, asset);

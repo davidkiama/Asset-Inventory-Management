@@ -2,6 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { CircularProgress } from "@mui/material";
 
+import "./Employee_Request.css";
+
 import EmployeeRequest from "./EmployeeRequest/EmployeeRequest";
 
 function EmployeeRequests() {
@@ -9,34 +11,33 @@ function EmployeeRequests() {
   const userRole = localStorage.getItem("userRole");
 
   return (
-    <div>
-      <div>
-        <table className="requests-table">
-          <thead>
-            <tr>
-              <th>Index</th>
-              <th>Status</th>
-              <th>Asset Type</th>
-              <th>Request Type</th>
-              <th>Sender</th>
-              <th>Quantity</th>
-              <th>Urgency</th>
-              {userRole === "Manager" ? <th colspan="2">Review</th> : <th>Delete</th>}
-            </tr>
-          </thead>
+    <>
+      <table className="requests-table" class="table">
+        <caption id="caption">Assets requests summary statement</caption>
+        <thead>
+          <tr className="table-row">
+            <th>Index</th>
+            <th>Status</th>
+            <th>Asset </th>
+            <th>Request </th>
+            <th>Sender</th>
+            <th>Quantity</th>
+            <th>Urgency</th>
+            {userRole === "Manager" ? <th colspan="2">Review</th> : <th>Delete</th>}
+          </tr>
+        </thead>
 
-          {!employeeRequests.length ? (
-            <CircularProgress />
-          ) : (
-            <>
-              {employeeRequests.map((employeeRequest, index) => (
-                <EmployeeRequest key={employeeRequest.id} employeeRequest={employeeRequest} index={index} />
-              ))}
-            </>
-          )}
-        </table>
-      </div>
-    </div>
+        {!employeeRequests.length ? (
+          <CircularProgress />
+        ) : (
+          <>
+            {employeeRequests.map((employeeRequest, index) => (
+              <EmployeeRequest key={employeeRequest.id} employeeRequest={employeeRequest} index={index} />
+            ))}
+          </>
+        )}
+      </table>
+    </>
   );
 }
 

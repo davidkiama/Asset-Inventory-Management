@@ -28,11 +28,8 @@ export const login = (user) => async (dispatch) => {
 
 export const logout = () => async (dispatch) => {
   try {
-    await api.logout();
-
-    window.location.reload();
-
     localStorage.clear();
+    await api.logout();
   } catch (error) {
     console.log(error);
   }

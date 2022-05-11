@@ -16,12 +16,25 @@ function EmployeeDashboard() {
 
   return (
     <>
-      <h1 className="manager_approval">All your requests </h1>
+      <div class="manager-dashboard">
+        <h1 className="manager_approval">All your requests</h1>
 
-      <Link to="/employee">Create new request</Link>
+        <Link to="/employee" className="side-btn">
+          Create new request
+        </Link>
 
-      <div>
-        <EmployeeRequests />
+        <div class="container-fluid">
+          <div class="row ">
+            <div class="col-md-2 col-sm-2">{/* sidebar */}</div>
+            <div class="col-md-8 col-sm-8">
+              <EmployeeRequests />
+            </div>
+            <div class="col-md-2 col-sm-2">{/* sidebar */}</div>
+          </div>
+        </div>
+        {/* <section class='footer'>
+      <Footer />  
+      </section> */}
       </div>
     </>
   );
