@@ -29,6 +29,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(asset(inputFields));
     console.log("InputFields", inputFields);
   };
 
