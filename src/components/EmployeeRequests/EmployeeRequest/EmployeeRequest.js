@@ -13,7 +13,7 @@ function EmployeeRequest({ employeeRequest, index }) {
   return (
     <tbody>
       <tr>
-        <td>{index} </td>
+        <td>{index +1} </td>
         <td>{employeeRequest.status}</td>
         <td>{employeeRequest.asset_type}</td>
         <td>{employeeRequest.request_type}</td>
