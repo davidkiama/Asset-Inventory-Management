@@ -1,16 +1,22 @@
-import React from  "react"
-import "./AssetList.css"
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+
+import CompanyAssets from "../../CompanyAssets/CompanyAssets";
+
+import { fetchAssets } from "../../../actions/assets";
 
 function AssetList() {
-  return(
-    <tbody>
-    <tr>
-      <td>asset-name</td>
-      <td>description</td>
-      <td>quantity</td>
-     
-    </tr>
-  </tbody>
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchAssets());
+  }, [dispatch]);
+
+  return (
+    <>
+      <h2>Title - Company Assets</h2>
+      <CompanyAssets />
+    </>
   );
 }
 

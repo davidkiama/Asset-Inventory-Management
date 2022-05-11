@@ -65,11 +65,9 @@ function Employee() {
                 onChange={(e) => setRequestData({ ...requestData, [e.target.name]: e.target.value })}
               >
                 <option value="">Level of urgency</option>
-                <option value="urgent">Urgent</option>
-                <option value="2">Not urgent</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+                <option value="Very Urgent">Very Urgent</option>
+                <option value="Urgent">Urgent</option>
+                <option value="Not Urgent">Not Urgent</option>
               </select>
 
               <button type="submit">Submit</button>

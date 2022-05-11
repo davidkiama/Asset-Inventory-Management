@@ -13,7 +13,7 @@ function EmployeeRequest({ employeeRequest, index }) {
   return (
     <tbody>
       <tr>
-        <td>{index +1} </td>
+        <td>{index + 1} </td>
         <td>{employeeRequest.status}</td>
         <td>{employeeRequest.asset_type}</td>
         <td>{employeeRequest.request_type}</td>
@@ -29,7 +29,10 @@ function EmployeeRequest({ employeeRequest, index }) {
               </button>
             </td>
             <td>
-              <button className="approve btn btn-outline-success" onClick={() => dispatch(approveRequest(id))}>
+              <button
+                className="approve btn btn-outline-success"
+                onClick={() => dispatch(approveRequest(id))}
+              >
                 Approve
               </button>
             </td>
