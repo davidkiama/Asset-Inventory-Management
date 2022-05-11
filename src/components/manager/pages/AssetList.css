@@ -1,0 +1,10 @@
+.side-btn {
+  float: right;
+  margin-right: 2rem;
+  padding: 1rem;
+  background-color: #eee;
+  color: black;
+  text-decoration: none;
+
+  transform: translateY(-4rem);
+}

@@ -42,8 +42,18 @@ function App() {
 
   return (
     <Container>
-      <h1>Add New Asset</h1>
-      <form className={classes.root} onSubmit={handleSubmit}>
+      <h1 style={{ marginTop: "5rem" }}>Add New Asset</h1>
+      <form
+        className={classes.root}
+        onSubmit={handleSubmit}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          marginTop: "3rem",
+        }}
+      >
         <TextField
           name="asset_name"
           label="Assetname"

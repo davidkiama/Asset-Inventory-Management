@@ -1,13 +1,19 @@
-*{
-    font-family: 'PT Sans', sans-serif;
+* {
+  font-family: "PT Sans", sans-serif;
 }
 
 /* .footer{
     margin-bottom: 0%;
 } */
 
-.manager-dashboard{
-    background: linear-gradient(90deg, rgb(133, 211, 211) 0%, rgb(1, 15, 12) 100%);
-    color: white;
-    min-height: 100vh;
+.manager-dashboard {
+  background: linear-gradient(90deg, rgb(133, 211, 211) 0%, rgb(1, 15, 12) 100%);
+  color: white;
+  min-height: 100vh;
+
+  padding-top: 30px;
+}
+
+.manager-dashboard h1 {
+  padding-bottom: 30px;
 }

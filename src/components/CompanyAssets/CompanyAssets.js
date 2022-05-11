@@ -7,7 +7,7 @@ function CompanyAssets() {
   const companyAssets = useSelector((state) => state.assets);
 
   return (
-    <table className="requests-table">
+    <table className="requests-table" class="table">
       <thead>
         <th>Asset Name</th>
         <th>Description</th>

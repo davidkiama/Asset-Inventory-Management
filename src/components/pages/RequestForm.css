@@ -1,4 +1,33 @@
 .form {
   display: flex;
   flex-direction: column;
+  margin: auto;
+}
+.form--request {
+  background-color: #fff;
+
+  width: 40rem;
+  padding: 2rem;
+}
+
+.form--request h4 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.form--request * {
+  margin-bottom: 1rem;
+}
+
+.form--request input,
+.form--request select {
+  padding: 0.5rem;
+  font-size: 16px;
+}
+
+.form--request button {
+  width: fit-content;
+  padding: 0.5rem;
+  background-color: #ccc;
+  margin: 0 auto;
 }

@@ -90,13 +90,6 @@ function Navbar() {
                 </li>
 
                 <li className="nav-item">
-                  <Link to="/Asset" className="nav-links" onClick={closeMobileMenu}>
-                    {/* You have to define closeMobileMenu at the top for it to work. */}
-                    Assets
-                  </Link>
-                </li>
-
-                <li className="nav-item">
                   <Link to="/AssetList" className="nav-links" onClick={closeMobileMenu}>
                     {/* You have to define closeMobileMenu at the top for it to work. */}
                     AssetList
