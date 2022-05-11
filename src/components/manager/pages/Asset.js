@@ -88,7 +88,7 @@ function App() {
             </IconButton>
             <IconButton onClick={handleAddFields}>
               <AddIcon />
-            </IconButton>
+        </IconButton>
           </div>
         ))}
         <Button
