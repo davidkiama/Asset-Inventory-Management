@@ -105,15 +105,27 @@ function Navbar() {
             )}
 
             {userRole ? (
-              <button onClick={logoutFunc}> logout</button>
+              <button style={{ height: "fit-content", margin: "auto" }} onClick={logoutFunc}>
+                {" "}
+                logout
+              </button>
             ) : (
-              <li className="nav-item">
-                <Link to="/sign-up" className="nav-links-mobile" onClick={closeMobileMenu}>
-                  {/* You have to define closeMobileMenu at the top for it to work. */}
-                  Sign-Up
-                </Link>
-                {button && <Button buttonStyle="btn--outline">Sign-Up</Button>}
-              </li>
+              <>
+                <li className="nav-item">
+                  <Link to="/sign-up" className="nav-links" onClick={closeMobileMenu}>
+                    {/* You have to define closeMobileMenu at the top for it to work. */}
+                    Sign-Up
+                  </Link>
+                  {/*{button && <Button buttonStyle="btn--outline">Sign-Up</Button>}*/}
+                </li>
+
+                <li>
+                  <Link to="/sign-in" className="nav-links" onClick={closeMobileMenu}>
+                    {/* You have to define closeMobileMenu at the top for it to work. */}
+                    Sign-In
+                  </Link>
+                </li>
+              </>
             )}
           </ul>
         </div>
