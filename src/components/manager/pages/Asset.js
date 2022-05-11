@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import Container from "@material-ui/core/Container";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import RemoveIcon from "@material-ui/icons/Remove";
-import AddIcon from "@material-ui/icons/Add";
-import Icon from "@material-ui/core/Icon";
-import { v4 as uuidv4 } from "uuid";
 
 import { makeStyles } from "@material-ui/core/styles";
+
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { createAsset } from "../../../actions/assets";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,84 +20,49 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const initialState = { asset_name: "", description: "", quantity: "" };
 function App() {
   const classes = useStyles();
-  const [inputFields, setInputFields] = useState([
-    { id: uuidv4(), assetname: "", companyName: "", quantity: "" },
-  ]);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [assetData, setAssetData] = useState(initialState);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("InputFields", inputFields);
+
+    dispatch(createAsset(assetData));
+
+    clear();
+    navigate("/AssetList");
   };
 
-  const handleChangeInput = (id, event) => {
-    const newInputFields = inputFields.map((i) => {
-      if (id === i.id) {
-        i[event.target.name] = event.target.value;
-      }
-      return i;
-    });
-
-    setInputFields(newInputFields);
-  };
-
-  const handleAddFields = () => {
-    setInputFields([...inputFields, { id: uuidv4(), firstName: "", lastName: "" }]);
-  };
-
-  const handleRemoveFields = (id) => {
-    const values = [...inputFields];
-    values.splice(
-      values.findIndex((value) => value.id === id),
-      1
-    );
-    setInputFields(values);
+  const clear = () => {
+    setAssetData(initialState);
   };
 
   return (
     <Container>
       <h1>Add New Asset</h1>
       <form className={classes.root} onSubmit={handleSubmit}>
-        {inputFields.map((inputField) => (
-          <div key={inputField.id}>
-            <TextField
-              name="assetname"
-              label="assetname"
-              variant="filled"
-              value={inputField.assetname}
-              onChange={(event) => handleChangeInput(inputField.id, event)}
-            />
-            <TextField
-              name="companyName"
-              label="companyName"
-              variant="filled"
-              value={inputField.companyName}
-              onChange={(event) => handleChangeInput(inputField.id, event)}
-            />
-            <TextField
-              name="quantity"
-              label="quantity"
-              variant="filled"
-              value={inputField.quantity}
-              onChange={(event) => handleChangeInput(inputField.id, event)}
-            />
-            <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
-              <RemoveIcon />
-            </IconButton>
-            <IconButton onClick={handleAddFields}>
-              <AddIcon />
-            </IconButton>
-          </div>
-        ))}
-        <Button
-          className={classes.button}
-          variant="contained"
-          color="primary"
-          type="submit"
-          endIcon={<Icon>Submit</Icon>}
-          onClick={handleSubmit}
-        >
+        <TextField
+          name="asset_name"
+          label="Assetname"
+          variant="filled"
+          onChange={(e) => setAssetData({ ...assetData, [e.target.name]: e.target.value })}
+        />
+        <TextField
+          name="description"
+          label="Asset Description"
+          variant="filled"
+          onChange={(e) => setAssetData({ ...assetData, [e.target.name]: e.target.value })}
+        />
+        <TextField
+          name="quantity"
+          label="Quantity"
+          variant="filled"
+          onChange={(e) => setAssetData({ ...assetData, [e.target.name]: e.target.value })}
+        />
+        <Button className={classes.button} variant="contained" color="primary" type="submit">
           Submit
         </Button>
       </form>

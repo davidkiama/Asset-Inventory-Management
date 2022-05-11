@@ -7,3 +7,13 @@ export const fetchAssets = () => async (dispatch) => {
     dispatch({ type: "FETCH_ASSETS", payload: data });
   } catch (error) {}
 };
+
+export const createAsset = (asset) => async (dispatch) => {
+  try {
+    const { data } = await api.createAsset(asset);
+
+    dispatch({ type: "CREATE_ASSET", payload: data });
+  } catch (error) {
+    console.log(error);
+  }
+};
