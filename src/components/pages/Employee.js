@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import "./RequestForm.css";
@@ -9,6 +9,7 @@ import { createRequest } from "../../actions/employeeRequests";
 const initialState = { asset_type: "", request_type: "", quantity: "", urgency: "", status: "open" };
 function Employee() {
   const [requestData, setRequestData] = useState(initialState);
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
@@ -16,7 +17,12 @@ function Employee() {
     e.preventDefault();
 
     dispatch(createRequest(requestData));
-    console.log(requestData);
+    clear();
+    navigate("/employee/dashboard");
+  };
+
+  const clear = () => {
+    setRequestData(initialState);
   };
 
   return (

@@ -37,9 +37,7 @@ function EmployeeRequest({ employeeRequest, index }) {
               </button>
             </td>
           </>
-        ) : (
-          <td>DELETE</td>
-        )}
+        ) : null}
       </tr>
     </tbody>
   );

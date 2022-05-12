@@ -23,7 +23,7 @@ function EmployeeRequests() {
             <th>Sender</th>
             <th>Quantity</th>
             <th>Urgency</th>
-            {userRole === "Manager" ? <th colspan="2">Review</th> : <th>Delete</th>}
+            {userRole === "Manager" ? <th colspan="2">Review</th> : null}
           </tr>
         </thead>
 
