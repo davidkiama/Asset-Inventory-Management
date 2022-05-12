@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const authUrl = "http://127.0.0.1:8000/auth";
-const requestsUrl = "http://127.0.0.1:8000/requests/";
-const managerReviewUrl = "http://127.0.0.1:8000/manager/requests/";
-const assetsUrl = "http://127.0.0.1:8000/manager/assets/";
+const authUrl = "https://asset-inventory-management.herokuapp.com/auth";
+const requestsUrl = "https://asset-inventory-management.herokuapp.com/requests/";
+const managerReviewUrl = "https://asset-inventory-management.herokuapp.com/manager/requests/";
+const assetsUrl = "https://asset-inventory-management.herokuapp.com/manager/assets/";
 
 let token = localStorage.getItem("token");
 
