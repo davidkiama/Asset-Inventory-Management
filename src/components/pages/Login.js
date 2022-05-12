@@ -23,10 +23,7 @@ function Login() {
     navigate("/");
   };
   return (
-    <form
-    style={{ width: "400px", margin: "15px auto" }}
-    onSubmit={handleSubmit}
-    >
+    <form style={{ width: "400px", margin: "15px auto" }} onSubmit={handleSubmit}>
       <div className="hero-container">
         <video src="/videos/video-3.mp4" autoPlay loop muted />
         <div className="App">
@@ -65,15 +62,8 @@ function Login() {
               </div>
               <div className="mb-3">
                 <div className="custom-control custom-checkbox">
-                  <input
-                    type="checkbox"
-                    className="custom-control-input"
-                    id="customCheck1"
-                  />
-                  <label
-                    className="custom-control-label"
-                    htmlFor="customCheck1"
-                  >
+                  <input type="checkbox" className="custom-control-input" id="customCheck1" />
+                  <label className="custom-control-label" htmlFor="customCheck1">
                     Remember me
                   </label>
                 </div>
